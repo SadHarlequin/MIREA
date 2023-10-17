@@ -4,7 +4,7 @@ import java.util.concurrent.*;
 //1. Поиск максимального элемента в массиве.
 
 public class First {
-
+   //Функция поиска максимального элемента
     public static void subsequence(int arr[]){
         int temp=1;
         temp=arr[0];
@@ -45,7 +45,7 @@ public class First {
         };
 
 
-        // Subsequence
+        // Последовательная реализация функции поиска максимального элемента (вызов)
         Runtime runtime = Runtime.getRuntime();
         long m = System.currentTimeMillis();
         subsequence(arr);
@@ -54,7 +54,7 @@ public class First {
         System.out.println("Time: "+ (double) (System.currentTimeMillis() - m));
         space();
 
-        // FutureTask
+        // Вызов функции поиска максимального элемента с использованием многопоточности (FutureTask)
         m = System.currentTimeMillis();
         FutureTask<String> future = new FutureTask<>(task1);
         new Thread(future).start();
@@ -69,7 +69,7 @@ public class First {
         // executorService.shutdown();
         space();
 
-        // ForkJoin
+        // Вызов функции поиска максимального элемента с использованием ForkJoin
         m = System.currentTimeMillis();
         Future<String> future2 = executorService.submit(task1);
         try {
